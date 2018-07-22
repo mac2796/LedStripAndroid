@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="xyz.mateusztarnowski.homecontrol">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".SleepAsAndroidReceiver">
+            <intent-filter>
+                <action android:name="com.urbandroid.sleep.alarmclock.TIME_TO_BED_ALARM_ALERT" />
+                <action android:name="com.urbandroid.sleep.alarmclock.SLEEP_TRACKING_STARTED" />
+                <action android:name="com.urbandroid.sleep.alarmclock.SLEEP_TRACKING_STOPPED" />
+                <action android:name="com.urbandroid.sleep.LUCID_CUE_ACTION" />
+                <action android:name="com.urbandroid.sleep.alarmclock.AUTO_START_SLEEP_TRACK" />
+                <action android:name="com.urbandroid.sleep.alarmclock.ALARM_ALERT_START" />
+                <action android:name="com.urbandroid.sleep.alarmclock.ALARM_SNOOZE_CLICKED_ACTION" />
+                <action android:name="com.urbandroid.sleep.alarmclock.ALARM_ALERT_DISMISS" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>
